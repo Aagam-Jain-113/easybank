@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Public Sans','Sans-serif';
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 6rem;
+    background: #fff;
+    z-index: 9999;
+    position: fixed;
+    width: 100%;
+}
+
+header ul li{
+    display: inline-flex;
+    list-style-type: none;
+    padding: 1rem;
+    color: hsl(233, 8%, 62%);
+}
+
+.request-btn{
+    color: #fff;
+    background: linear-gradient(-90deg,hsl(192, 70%, 51%),hsl(136, 65%, 51%));
+    padding: 0.8rem 2rem;
+    font-size: 12px;
+    border-radius: 49px;
+    border: none;
+    font-weight: 400;
+}
+
+.home{
+    display: flex;
+    background: hsl(0, 0%, 98%);
+}
+
+.col1{
+    flex: 0.4;
+}
+
+.col2{
+    flex: 0.6;
+    background: url(./images/bg-intro-desktop.svg) center center no-repeat;
+    background-size: 130% ;
+}
+
+.intro{
+    padding: 12rem 8rem;
+}
+
+.home__phone{
+    position: absolute;
+    width: 50%;
+    margin-left: 7%;
+    margin-top: -2%;
+}
+
+.title{
+    color: hsl(233, 26%, 24%);
+    font-size: 50px;
+}
+
+.content{
+    color: hsl(233, 8%, 62%);
+    margin-bottom: 8%;
+    margin-top: 5%;
+    font-size: 17px;
+}
+
+#about{
+    background: hsl(220, 16%, 96%);
+    padding: 5rem 8rem;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+  }
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+  }
