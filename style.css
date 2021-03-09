@@ -30,6 +30,10 @@ header ul li{
     color: hsl(233, 8%, 62%);
 }
 
+.hamburger{
+    display: none;
+}
+
 .request-btn{
     color: #fff;
     background: linear-gradient(-90deg,hsl(192, 70%, 51%),hsl(136, 65%, 51%));
@@ -38,25 +42,29 @@ header ul li{
     border-radius: 49px;
     border: none;
     font-weight: 400;
+    cursor: pointer;
 }
 
 .home{
-    display: flex;
     background: hsl(0, 0%, 98%);
-}
-
-.col1{
-    flex: 0.4;
-}
-
-.col2{
-    flex: 0.6;
-    background: url(./images/bg-intro-desktop.svg) center center no-repeat;
-    background-size: 130% ;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'col1 col2';
+    /* overflow: hidden; */
 }
 
 .intro{
-    padding: 12rem 8rem;
+    padding: 12rem 7.5rem;
+    grid-area: col1 ;
+}
+
+.mobile{
+    background: url(./images/bg-intro-desktop.svg) no-repeat;
+    left: unset;
+    background-size: 110%;
+    height: 150%;
+    grid-area: col2 ; 
 }
 
 .home__phone{
@@ -64,30 +72,214 @@ header ul li{
     width: 50%;
     margin-left: 7%;
     margin-top: -2%;
+    overflow-y: hidden;
 }
 
 .title{
     color: hsl(233, 26%, 24%);
-    font-size: 50px;
+    font-size: 3rem;
 }
 
 .content{
     color: hsl(233, 8%, 62%);
+    margin-top: 2%;
     margin-bottom: 8%;
-    margin-top: 5%;
-    font-size: 17px;
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 
-#about{
+.about{
     background: hsl(220, 16%, 96%);
     padding: 5rem 8rem;
 }
 
+.head{
+    color: hsl(233, 26%, 24%);
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.grid{
+    margin-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 20px;
+    text-align: left;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading{
+    margin: 8% 0 8% 0;
+    color: hsl(233, 26%, 24%);
+    font-weight: 400;
+    font-size: 1.4rem;
+}
+
+.para{
+    line-height: 1.7;
+    color: hsl(233, 8%, 62%)
+}
+
+.articles{
+    padding: 6rem 8rem;
+    background: hsl(0, 0%, 98%);
+}
+
+.article__img{
+    width: 100%;
+    height: 12.5rem;
+    object-fit: cover;
+}
+
+.info{
+    padding: 2rem 1rem;
+    background: #fff;
+}
+
+.author{
+    font-size: 10px;
+    color: hsl(233, 8%, 62%);
+}
+
+.article__heading{
+    margin-top: 5%;
+    font-size: 1rem;
+    line-height: 1.25;
+    margin-bottom: 5%;
+    color: hsl(233, 26%, 24%);
+}
+
+.article__info{
+    font-size: 0.79rem;
+    color: hsl(233, 8%, 62%);
+}
+
+.footer{
+    color: #fff;
+    background: hsl(233, 26%, 24%);
+    display: flex;
+    padding: 3rem 8rem;
+}
+
+.footer__logo{
+    background: #fff;
+}
+
+.footer__icons{
+    flex: 0.3;
+}
+
+.list1,.list2{
+    flex: 0.2;
+    line-height: 2rem;
+}
+
+.invite{
+    flex: 0.3;
+    text-align: right;
+}
+
+.copyright{
+    color: hsl(233, 8%, 62%);
+    margin-top: 8%;
+}
+
+.social > :first-child{
+    margin-top: 11%;
+}
+
+.social-icons{
+    margin-left: 10px;
+}
+
+li{
+    list-style-type: none;
+}
 .attribution {
     font-size: 11px;
     text-align: center;
+    background: hsl(233, 26%, 24%);
+    color: #fff;
+    padding: 1% 0;
   }
 
 .attribution a {
-    color: hsl(228, 45%, 44%);
+    color: hsl(228, 29%, 72%);
   }
+
+@media (max-width: 768px){
+    .footer{
+        display: block; 
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+    .invite{
+        text-align: center;
+    }
+    .footer__logo{
+        margin-top: 5%;
+    }
+    .social > :first-child{
+        margin-top: 3%;
+    }
+    .attribution{
+        padding: 3% 0;
+    }
+    .head{
+        font-size: 2rem;
+        text-align: center;
+        margin-top: 4rem;
+        margin-bottom: 1.5rem;
+    }
+    .articles,.about,.intro{
+        padding: 2rem 1rem;
+    }
+    .about{
+        text-align: center;
+    }
+    .grid{
+        text-align: center;
+        padding: 0;
+        font-size: 0.9rem;
+    }
+    .content{
+        font-size: 0.9rem;
+    }
+    .mobile{
+        background: url(./images/bg-intro-mobile.svg) no-repeat;
+    }
+    br{
+        display: none;
+    }
+    header ul, header button{
+        display: none;
+    }
+    .title{
+        font-size: 2rem;
+    }
+    .intro{
+        text-align: center;
+    }
+    .home{
+        grid-template-columns: 1fr;
+        grid-template-areas: 'col2'
+                             'col1';
+    }
+    .home__phone{
+        display: flex;
+        width: 90%;
+        margin-top: -14%;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+    }
+    header{
+        padding: 1rem
+    }
+    .hamburger{
+        display: block;
+    }
+} 
